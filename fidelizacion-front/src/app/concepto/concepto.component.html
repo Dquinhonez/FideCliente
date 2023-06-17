@@ -1,0 +1,79 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <!--REGISTRAR-->
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Registrar Concepto</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formulario">
+            <!--NUESTRA CREACION-->
+            <!--FILA 1-->
+            <div class="row">
+              <!--DESCRIPCION-->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Descripcion</label>
+                  <input formControlName="descripcion" type="text" class="form-control" placeholder="Descripcion">
+                </div>
+              </div>
+              <!--PUNTOS-->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Puntos</label>
+                  <input formControlName="puntos" type="number" class="form-control" placeholder="Puntos">
+                </div>
+              </div>
+            </div>
+            <!-- FIN NUESTRA CREACION-->
+          </form>
+          <!--BOTONES-->
+          <div class="button-container" style="text-align: center;">
+            <!--CONFIRMAR-->
+            <button (click)="agregar()" href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+              <i class="now-ui-icons ui-1_check"></i>
+            </button>
+            <!--CANCELAR-->
+            <button (click)="limpiarVista()" href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--LISTAR-->
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <!--LISTA CLIENTE-->      
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Lista conceptos</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>Descripcion</th>
+                <th>Puntos</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let xt of listado">
+                  <td>{{xt.concepto_uso}}</td>
+                  <td>{{xt.puntos_requeridos}}</td>
+                </tr>
+                <tr *ngIf="validar">
+                  <td colspan="12" class="text-center">No hay registros</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--FIN LISTA CLIENTE-->
+    </div>
+  </div>
+</div>

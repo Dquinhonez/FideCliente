@@ -1,0 +1,91 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <!--REGISTRAR-->
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Registrar reglas vencimientos</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formulario">
+            <!--NUESTRA CREACION-->
+            <!--FILA 1-->
+            <div class="row">
+              <!--DESCRIPCION-->
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>fecha Inicio</label>
+                  <input formControlName="fecha1" type="date" class="form-control" placeholder="Fecha Inicio">
+                </div>
+              </div>
+              <!--PUNTOS-->
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>fecha Fin</label>
+                  <input formControlName="fecha2" type="date" class="form-control" placeholder="Fecha Fin">
+                </div>
+              </div>
+              <!--PUNTOS-->
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Dias Especial?</label>
+                  <select formControlName="diaespecial" class="form-control" required>
+                    <option value="true">SI</option>
+                    <option value="false">NO</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- FIN NUESTRA CREACION-->
+          </form>
+          <!--BOTONES-->
+          <div class="button-container" style="text-align: center;">
+            <!--CONFIRMAR-->
+            <button (click)="agregarReglaVencimiento()"  href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+              <i class="now-ui-icons ui-1_check"></i>
+            </button>
+            <!--CANCELAR-->
+            <button (click)="limpiarVista()" href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--LISTAR-->
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <!--LISTA CLIENTE-->      
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Lista regla de vencimientos</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
+                <th>Dias Especial</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let xt of listado">
+                  <td>{{xt.fecha_inicio_validez}}</td>
+                  <td>{{xt.fecha_fin_validez}}</td>
+                  <td>{{xt.dia_especial}}</td>
+                </tr>
+                <tr *ngIf="validar">
+                  <td colspan="12" class="text-center">No hay registros</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--FIN LISTA CLIENTE-->
+    </div>
+  </div>
+</div>

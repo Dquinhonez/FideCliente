@@ -49,3 +49,32 @@ exports.findAll = (req, res) => {
     });
     });
     };
+
+// consulta de clientes por: nombre (aproximación), apellido (aproximación), cumpleaños
+exports.getClienteByAprox = async (req, res) => {
+    let nombre = req.body.nombre;
+    let apellido = req.body.apellido;
+    let fecha_nacimiento = req.body.fecha_nacimiento;
+    let query = 'select * from public."Clientes" where';
+    var condition;
+    if(nombre != undefined){
+        //condition =  { nombre: { [Op.like]: `%${nombre}%` } };
+        query = query + " nombre like" + "'%" + nombre + "%'";
+    }
+    else if(apellido != undefined){
+        //condition =  { apellido: { [Op.like]: `%${apellido}%` } };
+        query = query + " apellido like" + "'%" + apellido + "%'";
+    }
+    else if(fecha_nacimiento != undefined){
+        //condition =  { fecha_nacimiento: { fecha_nacimiento }  };
+        query = query + " fecha_nacimiento = " + "'" + fecha_nacimiento + "'";
+    }
+    
+    const { QueryTypes } = require('sequelize');
+    const response = await db.sequelize.query(query, {
+        type: QueryTypes.SELECT 
+    });
+    console.log(response[0]);
+    res.send( response[0]);
+
+}

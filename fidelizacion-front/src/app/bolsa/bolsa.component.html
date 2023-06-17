@@ -1,0 +1,48 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <!--REGISTRAR-->
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Registrar puntos</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formulario">
+            <!--NUESTRA CREACION-->
+            <!--FILA 1-->
+            <div class="row">
+              <!--DOCUMENTO-->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Documento</label>
+                  <input formControlName="documento" type="text" class="form-control" placeholder="Documento">
+                </div>
+              </div>  
+              <!--TIPO DE DOCUMENTO-->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Monto Operacion</label>
+                  <input formControlName="monto"  type="text" class="form-control" placeholder="Monto Operacion">
+                </div>
+              </div>
+            </div>
+            <!-- FIN NUESTRA CREACION-->
+          </form>
+          <!--BOTONES-->
+          <div class="button-container" style="text-align: center;">
+            <!--CONFIRMAR-->
+            <button (click)="agregarPunto()" href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+              <i class="now-ui-icons ui-1_check"></i>
+            </button>
+            <!--CANCELAR-->
+            <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

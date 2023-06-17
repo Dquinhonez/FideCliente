@@ -1,0 +1,139 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <!--REGISTRAR-->
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Registrar Cliente</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formulario">
+            <!--NUESTRA CREACION-->
+            <!--FILA 1-->
+            <div class="row">
+              <!--NOMBRE-->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre">
+                </div>
+              </div>
+              <!--APELLIDO-->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Apellido</label>
+                  <input formControlName="apellido" type="text" class="form-control" placeholder="Apellido">
+                </div>
+              </div>
+            </div>
+            <!--FILA 2-->
+            <div class="row">
+              <!--DOCUMENTO-->
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Documento</label>
+                  <input formControlName="documento" type="text" class="form-control" placeholder="Documento">
+                </div>
+              </div>
+              <!--TIPO DE DOCUMENTO-->
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Tipo de documento</label>
+                  <input formControlName="tipo"  type="text" class="form-control" placeholder="Tipo de documento">
+                </div>
+              </div>
+              <!--NACIONALIDAD-->
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Nacionalidad</label>
+                  <input formControlName="nacionalidad" type="text" class="form-control" placeholder="Nacionalidad">
+                </div>
+              </div>
+            </div>
+            <!--FILA 3-->
+            <div class="row">
+              <!--EMAIL-->
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input formControlName="email" type="text" class="form-control" placeholder="Email">
+                </div>
+              </div>
+              <!--TELEFONO-->
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Telefono</label>
+                  <input formControlName="telefono"  type="text" class="form-control" placeholder="Telefono">
+                </div>
+              </div>
+              <!--FECHA DE NACIMIENTO-->
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Fecha de nacimiento</label>
+                  <input formControlName="fecha"  type="date" class="form-control" placeholder="Fecha de nacimiento">
+                </div>
+              </div>
+            </div>
+            <!-- FIN NUESTRA CREACION-->
+          </form>
+          <!--BOTONES-->
+          <div class="button-container" style="text-align: center;">
+            <!--CONFIRMAR-->
+            <button (click)="agregarCliente()" href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+              <i class="now-ui-icons ui-1_check"></i>
+            </button>
+            <!--CANCELAR-->
+            <button (click)="limpiarVista()" href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--LISTAR-->
+  <div class="row">
+    <div class="col-md-12">
+      <!--LISTA CLIENTE-->      
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Lista clientes</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table datatable class="table">
+              <thead class=" text-primary">
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Documento</th>
+                <th>Tipo de documento</th>
+                <th>Nacionalidad</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Fecha de nacimiento</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let xt of listado">
+                  <td>{{xt.nombre}}</td>
+                  <td>{{xt.apellido}}</td>
+                  <td>{{xt.nro_documento}}</td>
+                  <td>{{xt.tipo_documento}}</td>
+                  <td>{{xt.nacionalidad}}</td>
+                  <td>{{xt.email}}</td>
+                  <td>{{xt.telefono}}</td>
+                  <td>{{xt.fecha_nacimiento}}</td>
+                </tr>
+                <tr *ngIf="validar">
+                  <td colspan="12" class="text-center">No hay registros</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--FIN LISTA CLIENTE-->
+    </div>
+  </div>
+</div>

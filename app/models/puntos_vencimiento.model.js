@@ -14,6 +14,9 @@ module.exports = (sequelize, Sequelize) => {
     dias_duracion: {
     type: Sequelize.INTEGER
     },
+    dia_especial: {
+        type: Sequelize.BOOLEAN
+        },
     });
     return Puntos_vencimiento;
 };

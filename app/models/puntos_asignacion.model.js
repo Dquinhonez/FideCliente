@@ -13,6 +13,9 @@ module.exports = (sequelize, Sequelize) => {
     },
     monto_punto_equivalencia: {
     type: Sequelize.INTEGER
+    },
+    punto_equivalencia: {
+    type: Sequelize.INTEGER
     }
     });
     return Puntos_asignacion;

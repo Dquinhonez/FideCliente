@@ -1,0 +1,68 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <!--LISTAR-->
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <!--LISTA CLIENTE-->      
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Total Puntos por Cliente</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>Nro_Documento</th>
+                <th>Cliente</th>
+                <th>Total Puntos</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let xt of totalpuntos">
+                  <td>{{xt.nro_documento}}</td>
+                  <td>{{xt.nombre}} {{xt.apellido}}</td>
+                  <td>{{xt.total}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--FIN LISTA CLIENTE-->
+    </div>
+  </div>
+  <!--LISTAR-->
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <!--LISTA CLIENTE-->      
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Uso de Puntos por Cliente</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>Nro_Documento</th>
+                <th>Cliente</th>
+                <th>Puntos Utilizados</th>
+                <th>Concepto</th>
+                <th>Fecha de uso</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let xt of usopuntos">
+                  <td>{{xt.nro_documento}}</td>
+                  <td>{{xt.nombre}} {{xt.apellido}}</td>
+                  <td>{{xt.total}}</td>
+                  <td>{{xt.concepto_uso}}</td>
+                  <td>{{xt.fecha_utilizacion}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--FIN LISTA CLIENTE-->
+    </div>
+  </div>
+</div>

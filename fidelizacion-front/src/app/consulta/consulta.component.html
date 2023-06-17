@@ -1,0 +1,37 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <!--PUNTO POR MONTO-->
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Consultar punto por monto</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formulario2">
+            <!--NUESTRA CREACION-->
+            <!--FILA 1-->
+            <div class="row">
+              <!--DOCUMENTO-->
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Monto</label>
+                  <input formControlName="monto" type="text" class="form-control" placeholder="Monto">
+                </div>
+              </div>  
+            </div>
+            <!-- FIN NUESTRA CREACION-->
+          </form>
+          <!--BOTONES-->
+          <div class="button-container" style="text-align: center;">
+            <!--CONFIRMAR-->
+            <button (click)="consultarPuntoMonto()" href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+              <i class="now-ui-icons ui-1_check"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
